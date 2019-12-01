@@ -100,16 +100,15 @@ const input = `148216
 104282`;
 
 const getNumberList = input => input.split('\n').map(x => Number(x));
-const additionalFuel = x => {
+const calculateFuel = x => {
   const f = ((x / 3) | 0) - 2;
   return f < 0 ? 0 : f;
 };
-const newElfOperation = x => {
-  const fuel = additionalFuel(x);
-  return !fuel ? 0 : fuel + newElfOperation(fuel);
+const calculateAdditionalFuel = x => {
+  const fuel = calculateFuel(x);
+  return !fuel ? 0 : fuel + calculateAdditionalFuel(fuel);
 }
 // part 1
-console.log(getNumberList(input).map(additionalFuel).reduce((acc, x) => acc + x, 0));
+console.log(getNumberList(input).map(calculateFuel).reduce((sum, x) => sum + x, 0));
 // part 2
-console.log(getNumberList(input).map(newElfOperation).reduce((acc, x) => acc + x, 0));
-
+console.log(getNumberList(input).map(calculateAdditionalFuel).reduce((sum, x) => sum + x, 0));

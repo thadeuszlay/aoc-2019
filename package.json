@@ -1,0 +1,14 @@
+{
+  "name": "aoc-2019",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/thadeuszlay/aoc-2019.git",
+  "author": "thadeuszlay <t.le@ftapi.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
